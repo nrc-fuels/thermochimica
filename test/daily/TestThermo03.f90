@@ -53,7 +53,7 @@ program TestThermo03
     else
         ! The unit test failed.
         print *, 'TestThermo03: FAIL <---'
-        call EXIT(1)
+        error stop '1'
     end if
     
     ! Reset Thermochimica:
