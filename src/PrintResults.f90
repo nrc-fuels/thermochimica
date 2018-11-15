@@ -180,7 +180,7 @@ subroutine PrintResultsSolnPhase
         ! Print solution phase name:
         !if ((dMolesPhase(k) >= 1D4).OR.(dMolesPhase(k) <= 1D-1)) then
         if ((dMolesPhase(k) >= 999.95).OR.(dMolesPhase(k) <= 1D-1)) then
-            print '(A3,ES10.4,A5,A12)', cDummy, dMolesPhase(k), ' mol ', cSolnPhaseName(l)
+            print '(A3,ES11.4,A5,A12)', cDummy, dMolesPhase(k), ' mol ', cSolnPhaseName(l)
         elseif ((dMolesPhase(k) < 0.99949).AND.(dMolesPhase(k) > 1D-1)) then
             ! Format the output so that there are 5 significant figures (k = 6 because it includes ".").
             i = 7
@@ -244,7 +244,7 @@ subroutine PrintResultsSolnPhase
         if (dmolFraction(iFirst) >= 1D-1) then     
             print '(A20,F7.5,A3,A25)', '{ ', dmolFraction(c), ' ', cSpeciesName(c)
         else
-            print '(A20,ES10.4,A25)', '{ ', dmolFraction(c), cSpeciesName(c)
+            print '(A20,ES11.4,A25)', '{ ', dmolFraction(c), cSpeciesName(c)
         end if
             
         k    = LEN_TRIM(cSpeciesName(iFirst)) - 1
@@ -256,7 +256,7 @@ subroutine PrintResultsSolnPhase
             if (dmolFraction(c) >= 1D-1) then
                 print '(A20,F7.5,A3,A25)', '+ ', dmolFraction(c), ' ', cSpeciesName(c)
             else
-                print '(A20,ES10.4,A25)', '+ ', dmolFraction(c), cSpeciesName(c)
+                print '(A20,ES11.4,A25)', '+ ', dmolFraction(c), cSpeciesName(c)
             end if 
             k        = LEN_TRIM(cSpeciesName(c)) - 1
             nMax = MAX(k, nMax)
@@ -272,7 +272,7 @@ subroutine PrintResultsSolnPhase
         if (dmolFraction(c) >= 1D-1) then       
             print '(A20,F7.5,A3,A25)', '+ ', dmolFraction(c), ' ', cDummyB
         else
-            print '(A20,ES10.4,A25)', '+ ', dmolFraction(c), cDummyB
+            print '(A20,ES11.4,A25)', '+ ', dmolFraction(c), cDummyB
         end if
         print *
         
@@ -380,7 +380,7 @@ subroutine PrintResultsPureConPhase
         j = iTempVec(i)
             
         if ((dMolesPhase(j) >= 1D4).OR.(dMolesPhase(j) <= 1D-1)) then
-            print '(A3,ES10.4,A4,A15)', cDummy, dMolesPhase(j), ' mol', cSpeciesName(iAssemblage(j)) 
+            print '(A3,ES11.4,A4,A15)', cDummy, dMolesPhase(j), ' mol', cSpeciesName(iAssemblage(j)) 
         elseif ((dMolesPhase(j) < 0.99949).AND.(dMolesPhase(j) > 1D-1)) then
             ! Format the output so that there are 5 significant figures (k = 6 because it includes ".").
             k = 7
