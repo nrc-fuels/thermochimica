@@ -138,16 +138,16 @@ subroutine CompExcessGibbsEnergyRKMP(iSolnIndex)
                     if (j == iRegularParam(iParam,2)) then
                         ! First species of parameter.                        
                         dPartialExcessGibbs(i) = dPartialExcessGibbs(i) + dExcessGibbsParam(iParam) * &
-                            dxvmo * ((x2 - xprod)*dx + DFLOAT(iExponent)*xprod*(1D0 - dx))
+                            dxvmo * ((x2 - xprod)*dx + (iExponent)*xprod*(1D0 - dx))
 
                     elseif (j == iRegularParam(iParam,3)) then
                         ! Second species of parameter.                       
                         dPartialExcessGibbs(i) = dPartialExcessGibbs(i) + dExcessGibbsParam(iParam) * &
-                            dxvmo * ((x1 - xprod)*dx - DFLOAT(iExponent)*xprod*(1D0 + dx))     
+                            dxvmo * ((x1 - xprod)*dx - (iExponent)*xprod*(1D0 + dx))     
                     else 
                         ! This species does not belong to the parameter.
                         dPartialExcessGibbs(i) = dPartialExcessGibbs(i) - dExcessGibbsParam(iParam) * &
-                            (dx**(iExponent)) * xprod * (1D0 + DFLOAT(iExponent)) 
+                            (dx**(iExponent)) * xprod * (1D0 + iExponent)
                     end if    
                                                                                         
                 end do

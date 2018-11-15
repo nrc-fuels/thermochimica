@@ -132,7 +132,7 @@ subroutine CompMolFraction(k)
                 do j = 1, nElements
                     dTemp = dTemp + dElementPotential(j) * dStoichSpecies(i,j)
                 end do
-                dTemp           = dTemp / DFLOAT(iParticlesPerMole(i))
+                dTemp           = dTemp / iParticlesPerMole(i)
                 dMolFraction(i) = DEXP(dTemp - dStdGibbsEnergy(i))
                 dMolFraction(i) = DMIN1(dMolFraction(i),1D0)
             end do
@@ -146,7 +146,7 @@ subroutine CompMolFraction(k)
         dSumMolFractionSoln(k) = dSumMolFractionSoln(k) + dMolFraction(i)            
         do j = 1,nElements
             dEffStoichSolnPhase(k,j) = dEffStoichSolnPhase(k,j) + dMolFraction(i) * &
-                dStoichSpecies(i,j) / DFLOAT(iParticlesPerMole(i))
+                dStoichSpecies(i,j) / iParticlesPerMole(i)
         end do
     end do
                         

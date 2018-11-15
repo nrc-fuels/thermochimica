@@ -220,7 +220,7 @@ subroutine ParseCSDataBlock
 
             case default
 
-                ! The solution phase type is not supported. Report an error.                                                                                                                              
+                ! The solution phase type is not supported. Report an error.
                 INFO = 17
                 return
                 

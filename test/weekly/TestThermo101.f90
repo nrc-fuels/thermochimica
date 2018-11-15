@@ -71,11 +71,11 @@ program TestThermo101
         LOOP_B: do b = 1, 100, 1
 
             ! Define elemental masses:
-            dElementMass(1)  = DFLOAT(b) * 1D-3
+            dElementMass(1)  = (b) * 1D-3
             dElementMass(40) = 1D0 - dElementMass(1)
 
             ! Definte temperature:
-            dTemperature = DFLOAT(i)
+            dTemperature = (i)
 
             ! Call Thermochimica:
             call Thermochimica

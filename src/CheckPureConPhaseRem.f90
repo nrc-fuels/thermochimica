@@ -115,7 +115,7 @@ subroutine CheckPureConPhaseRem
                 exit LOOP_PureConPhases
             
             end if
-                                                                                                                                                                                                                 
+
             ! Try removing this pure condensed phase from the phase assemblage:
             call RemPureConPhase(iPhaseChange,lSwapLater,lPhasePass)
                                                                                                                           

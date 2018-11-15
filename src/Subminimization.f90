@@ -276,7 +276,7 @@ subroutine SubMinInit(iSolnPhaseIndex,iterSubMax)
             dChemicalPotentialStar(k) = dChemicalPotentialStar(k) + dElementPotential(j) &
                 * dStoichSpecies(i,j)
         end do
-        dChemicalPotentialStar(k) = dChemicalPotentialStar(k) / DFLOAT(iParticlesPerMole(i))
+        dChemicalPotentialStar(k) = dChemicalPotentialStar(k) / iParticlesPerMole(i)
         
         ! Initialize the mole fractions:
         dMolFraction(i) = DMAX1(dMolFraction(i), 1D-15)
@@ -412,7 +412,7 @@ subroutine SubMinDrivingForce
     end do
     
     ! Normalize the driving force:
-    dDrivingForce = dDrivingForce / DFLOAT(nVar)
+    dDrivingForce = dDrivingForce / nVar
 
 end subroutine SubMinDrivingForce
 
@@ -780,7 +780,7 @@ subroutine SubMinCheckDuplicate(lDuplicate)
     end do
     
     ! Compute the normalized Euclidean norm between the mole fraction vectors between the two "phases":
-    dTemp = ( dTemp**(0.5) ) / DFLOAT(nVar)
+    dTemp = ( dTemp**(0.5) ) / nVar
     
     ! Check if the normalized Euclidean norm is less than a specified tolerance:
     if (dTemp < dTolEuclideanNorm) lDuplicate = .TRUE.

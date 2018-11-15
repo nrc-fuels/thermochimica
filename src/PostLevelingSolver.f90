@@ -107,7 +107,7 @@ subroutine PostLevelingSolver
                 A(i,j) = dAtomFractionSpecies(iAssemblage(i),j)
             end do
             dLevel(j) = dChemicalPotential(iAssemblage(j))  + DLOG(dTempVecE(j)) / & 
-                !DFLOAT(iSpeciesTotalAtoms(iAssemblage(j)))
+                !iSpeciesTotalAtoms(iAssemblage(j))
                 dSpeciesTotalAtoms(iAssemblage(j))
         end do
                 

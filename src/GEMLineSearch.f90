@@ -330,7 +330,7 @@ subroutine InitGEMLineSearch(dStepLength,dMolesSpeciesLast,dElementPotentialLast
                 dTemp = dTemp + dUpdateVar(j) * dStoichSpecies(i,j)
             end do
             
-            dTemp = dTemp / DFLOAT(iParticlesPerMole(i))
+            dTemp = dTemp / iParticlesPerMole(i)
             
             ! NOTE: The variable dMolFraction is used temporarily to represent 
             ! the fractional update to dMolesSpecies, but it does not replace
@@ -381,7 +381,7 @@ subroutine InitGEMLineSearch(dStepLength,dMolesSpeciesLast,dElementPotentialLast
         end if
     end do
 
-	! Update the element potentials:
+    ! Update the element potentials:
     do i = 1, nElements
         dElementPotential(i) = dUpdateVar(i)
     end do

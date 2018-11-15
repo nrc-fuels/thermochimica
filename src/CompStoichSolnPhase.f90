@@ -60,7 +60,7 @@ subroutine CompStoichSolnPhase(k)
     
         LOOP_B: do j = 1,nElements
             dEffStoichSolnPhase(k,j) = dEffStoichSolnPhase(k,j) + dMolFraction(i) * dStoichSpecies(i,j) &
-                / DFLOAT(iParticlesPerMole(i))
+                / iParticlesPerMole(i)
             
             ! Check for a NAN:
             if (dEffStoichSolnPhase(k,j) /= dEffStoichSolnPhase(k,j)) then

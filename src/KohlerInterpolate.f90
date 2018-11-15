@@ -75,7 +75,7 @@ subroutine KohlerInterpolate(iSolnIndex,iParam,xT,dGParam,dPartialGParam)
     do i = 1, iRegularParam(iParam,1)
         j = nSpeciesPhase(iSolnIndex-1) + iRegularParam(iParam,i+1)
         dPartialExcessGibbs(j) = dPartialExcessGibbs(j) + (xT**(k-1)) * (dPartialGParam(i) + &
-            dGParam * (1D0 - xT) * (DFLOAT(k)-1D0))
+            dGParam * (1D0 - xT) * (k - 1D0))
     end do
 
     ! Compute the equivalent excess Gibbs energy of mixing of species that are not part of the sub-system:
@@ -84,7 +84,7 @@ subroutine KohlerInterpolate(iSolnIndex,iParam,xT,dGParam,dPartialGParam)
         do m = 1,k
             if (j == iRegularParam(iParam,m+1)) cycle LOOP_A
         end do
-        dPartialExcessGibbs(i) = dPartialExcessGibbs(i) - (xT**(k)) * (dGParam * (DFLOAT(k)-1D0))
+        dPartialExcessGibbs(i) = dPartialExcessGibbs(i) - (xT**(k)) * (dGParam * (k - 1D0))
     end do LOOP_A
     
     return

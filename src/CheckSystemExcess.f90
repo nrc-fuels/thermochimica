@@ -201,7 +201,7 @@ subroutine CheckSystemExcess
 
                                 if (l <= n) then
                                     ! l is the constituent index on sublattice m.   
-                                                                                                                                          
+
                                     if (iConstituentPass(iPhaseSublatticeCS(i),m,l) == 0) then
 
                                         ! If any of the constituents associated with this parameter did not pass, then

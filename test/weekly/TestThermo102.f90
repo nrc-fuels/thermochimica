@@ -67,7 +67,7 @@ program TestThermo102
     LOOP_T: do i = 300, 1500, 1
 
         ! Definte temperature:
-        dTemperature = DFLOAT(i)
+        dTemperature = i
 
         ! Composition loop:
         LOOP_B: do b = 1, 100, 1

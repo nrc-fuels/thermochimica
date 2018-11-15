@@ -67,7 +67,7 @@ subroutine CheckMiscibilityGap(iSolnPhaseIndex,lAddPhase)
     iLast            = nSpeciesPhase(iSolnPhaseIndex)          
     nConstituents    = iLast - iFirst + 1                      
     dMinMoleFraction = 1D-3
-    dMaxMoleFraction = 1D0 - dMinMoleFraction * DFLOAT(nConstituents-1)
+    dMaxMoleFraction = 1D0 - dMinMoleFraction * (nConstituents-1)
     dMaxMoleFraction = DMAX1(dMaxMoleFraction, 0.9D0)
     lAddPhase        = .FALSE.
 
