@@ -12,7 +12,7 @@ function(add_Thermochimica_daily_unit_test test_name)
   set_property(TARGET ${test_name}
     PROPERTY
     FOLDER "Thermochimica-Daily-Unit-Tests")
-  source_group("Thermochimica\\UnitTests" FILES ${test_name}.f90)
+  source_group("src" FILES ${test_name}.f90)
 endfunction(add_Thermochimica_daily_unit_test)
 
 foreach(test
