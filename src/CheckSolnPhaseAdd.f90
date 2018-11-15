@@ -123,7 +123,7 @@ subroutine CheckSolnPhaseAdd
          !   (nConPhases + nSolnPhases < nElements - nChargedConstraints)) then
         IF_SolnPhaseAdd: if ((dDrivingForceSoln(i) < dTolerance(4)).AND. & 
             (nConPhases + nSolnPhases < nElements)) then
-                                                                                                                                                                  
+
             ! Try adding this solution phase to the assemblage:
             call AddSolnPhase(i,lSwapLater,lPhasePass)
                       

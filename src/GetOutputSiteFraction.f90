@@ -88,7 +88,7 @@ subroutine GetOutputSiteFraction(cSolnOut, iSublatticeOut, iConstituentOut, dSit
                 j = k
 
                 ! Verify that this solution phase has the correct
-	  	! phase type:
+                ! phase type:
                 if ((cSolnPhaseType(j) /= 'SUBLM').OR.(cSolnPhaseType(j) /= 'SUBL')) then
                     ! Do nothing.
                 else

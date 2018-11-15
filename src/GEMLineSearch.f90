@@ -381,7 +381,7 @@ subroutine InitGEMLineSearch(dStepLength,dMolesSpeciesLast,dElementPotentialLast
         end if
     end do
 
-	! Update the element potentials:
+    ! Update the element potentials:
     do i = 1, nElements
         dElementPotential(i) = dUpdateVar(i)
     end do

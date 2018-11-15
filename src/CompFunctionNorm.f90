@@ -74,7 +74,7 @@ subroutine CompFunctionNorm
         dGEMFunctionNorm = dGEMFunctionNorm + (dTemp)**(2)
 
     end do
-	           
+
     ! Compute the residuals of the Gibbs energy difference between each solution phase and the element potentials:
     do l = 1, nSolnPhases
         k      = -iAssemblage(nElements - l + 1)       ! Absolute solution phase index
@@ -89,12 +89,12 @@ subroutine CompFunctionNorm
             ! Normalize the residual term by the number of particles per formula mass:
             dTemp = dTemp / DFLOAT(iParticlesPerMole(i))
             
-			! Compute the residual term weighted by the mole fraction:
+            ! Compute the residual term weighted by the mole fraction:
             dTemp = DABS(dChemicalPotential(i) - dTemp) * dMolFraction(i)
                                                                                       
             ! Exclude trace species from the computation of the functional norm:
             dTempB = dTempB + dTemp
-					
+
         end do
 
         dGEMFunctionNorm = dGEMFunctionNorm + (dTempB)**(2)
@@ -114,12 +114,12 @@ subroutine CompFunctionNorm
         dGEMFunctionNorm = dGEMFunctionNorm + (dTemp)**(2)
 
     end do
-	
+
     ! Finally, the functional norm:
     dGEMFunctionNorm = dGEMFunctionNorm**(0.5)
 
     if (lDebugMode .EQV. .TRUE.) print *, 'dGEMFunctionNorm = ', dGEMFunctionNorm
-    
+
     return
-    
+
 end subroutine CompFunctionNorm
