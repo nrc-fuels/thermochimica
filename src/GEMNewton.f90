@@ -127,7 +127,7 @@ subroutine GEMNewton(INFO)
                 ! Loop through species in phase:   
                 do l = nSpeciesPhase(m-1) + 1, nSpeciesPhase(m)
                     dTemp  = dStoichSpecies(l,i) * dStoichSpecies(l,j) * dMolesSpecies(l)
-                    A(i,j) = A(i,j) + dTemp / (DFLOAT(iParticlesPerMole(l))**2)
+                    A(i,j) = A(i,j) + dTemp / (iParticlesPerMole(l)**2)
                 end do
             end do
             ! Apply symmetry:
@@ -142,7 +142,7 @@ subroutine GEMNewton(INFO)
             k = -iAssemblage(nElements - l + 1)
             do i = nSpeciesPhase(k-1) + 1, nSpeciesPhase(k)
                 dTemp = dStoichSpecies(i,j) * dMolesSpecies(i) * (dChemicalPotential(i) - 1D0)
-                B(j)  = B(j) + dTemp / DFLOAT(iParticlesPerMole(i))
+                B(j)  = B(j) + dTemp / iParticlesPerMole(i)
             end do
         end do   
     end do

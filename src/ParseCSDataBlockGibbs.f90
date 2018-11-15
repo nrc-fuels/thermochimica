@@ -147,7 +147,7 @@ subroutine ParseCSDataBlockGibbs(i,j,iCounterGibbsEqn)
     ! Note: ChemSage data-files store the stoichiometry coefficients as real variables, which may
     ! be less than one when there are more than 1 particles/mole.  I am going to convert the stoichiometry
     ! to an integer to minimize numerical error while still recording the number of particles per mole.
-    dTemp = DFLOAT(iParticlesPerMoleCS(j))
+    dTemp = iParticlesPerMoleCS(j)
     dStoichSpeciesCS(j,1:k) = dTempVec(1:k) * dTemp
 
     l = MOD(nElementsCS-10,11)

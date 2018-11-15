@@ -89,7 +89,7 @@ subroutine PolyRegularQKTO(iSolnIndex,iParam,xT,dGParam,dPartialGParam)
     ! Compute the partial excess Gibbs energy of mixing per equivalent mole in the sub-system:
     do i = 1, iRegularParam(iParam,1)
         k = iRegularParam(iParam,iRegularParam(iParam,1) + 1 + i)
-        dPartialGParam(i) = dExcessGibbsParam(iParam) * (DFLOAT(k) * y(i)**(k - 1) + (1D0 - DFLOAT(zT)) * y(i)**k)
+        dPartialGParam(i) = dExcessGibbsParam(iParam) * (k * y(i)**(k - 1) + (1D0 - zT) * y(i)**k)
         
         ! Loop through parameters:
         do j = 1, iRegularParam(iParam,1)

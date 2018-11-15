@@ -222,7 +222,7 @@ subroutine CompExcessGibbsEnergySUBL(iSolnIndex)
                 n = j - iFirst + 1
                 
                 ! Compute pre-factor term:
-                dTemp = 1D0 - DFLOAT(nSublattice)
+                dTemp = 1D0 - nSublattice
                 
                 ! Loop through sublattices:
                 do s = 1, nSublattice
@@ -303,7 +303,7 @@ subroutine CompExcessGibbsEnergySUBL(iSolnIndex)
                 ! Reinitialize variables:
                 KD    = 0 
                 m     = i - iFirst + 1
-                dTemp = -DFLOAT(nSublattice + iRegularParam(l,n+2)) 
+                dTemp = -(nSublattice + iRegularParam(l,n+2))
                 
                 ! Loop through sublattices associated with this phase:
                 LOOP_Param_Sub: do s = 1, nSublattice
@@ -345,7 +345,7 @@ subroutine CompExcessGibbsEnergySUBL(iSolnIndex)
                 
                 ! Apply higher order terms (only if dFirstParam and dSecondParam are not the same):
                 if (dFirstParam /= dSecondParam) then
-                    dTemp = dTemp + DFLOAT(KD * iRegularParam(l,n+2)) / (dFirstParam - dSecondParam)
+                    dTemp = dTemp + (KD * iRegularParam(l,n+2)) / (dFirstParam - dSecondParam)
                 end if
 
                 ! Apply partial molar excess Gibbs energy of mixing:

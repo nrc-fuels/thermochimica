@@ -95,7 +95,7 @@ subroutine CorrectMolFraction
             end do
 
             ! Normalize this quantity by the number of particles per mole:
-            dTemp = dTemp / DFLOAT(iParticlesPerMole(i))
+            dTemp = dTemp / iParticlesPerMole(i)
 
             ! Compute correction factor to mole fraction:
             dTemp = dTemp - dChemicalPotential(i)

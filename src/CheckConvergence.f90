@@ -178,7 +178,7 @@ subroutine CheckConvergence
             end do
 
             ! Normalize this quantity by the number of particles per mole:
-            dResidual = dResidual / DFLOAT(iParticlesPerMole(i))
+            dResidual = dResidual / iParticlesPerMole(i)
                                 
             ! Compute absolute quantity of the residual term:
             dResidual = DABS(dResidual - dChemicalPotential(i))
@@ -251,7 +251,7 @@ subroutine CheckConvergence
         do l = 1, nSolnPhases
             k = -iAssemblage(nElements - l + 1)                 ! Absolute solution phase index.
             do i = nSpeciesPhase(k-1) + 1, nSpeciesPhase(k)     ! Absolute solution species index.
-                dResidual = dResidual + dMolesSpecies(i) * dStoichSpecies(i,j) / DFLOAT(iParticlesPerMole(i))        
+                dResidual = dResidual + dMolesSpecies(i) * dStoichSpecies(i,j) / iParticlesPerMole(i)
             end do
         end do
         

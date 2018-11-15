@@ -87,7 +87,7 @@ subroutine CompFunctionNorm
             end do
             
             ! Normalize the residual term by the number of particles per formula mass:
-            dTemp = dTemp / DFLOAT(iParticlesPerMole(i))
+            dTemp = dTemp / iParticlesPerMole(i)
             
             ! Compute the residual term weighted by the mole fraction:
             dTemp = DABS(dChemicalPotential(i) - dTemp) * dMolFraction(i)

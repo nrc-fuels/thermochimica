@@ -78,7 +78,7 @@ subroutine GetFirstAssemblage
     
     dTempArr = 0D0
     do i = 1,nSpecies
-        dTempArr(i,1:nElements) = dChemicalPotential(i) * DFLOAT(iAtomFractionSpecies(i,1:nElements))
+        dTempArr(i,1:nElements) = dChemicalPotential(i) * iAtomFractionSpecies(i,1:nElements)
     end do
     
     ! The following integer vector contains the indices of species with the 

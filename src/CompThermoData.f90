@@ -190,7 +190,7 @@ subroutine CompThermoData
         end if
          
         ! Convert chemical potentials to dimensionless units:
-        dChemicalPotential(j) = dChemicalPotential(j) * dTemp * DFLOAT(iParticlesPerMoleCS(i))
+        dChemicalPotential(j) = dChemicalPotential(j) * dTemp * iParticlesPerMoleCS(i)
                                                                             
         ! Add pressure dependence term to the chemical potential term:
         if (iPhaseCS(i) == 1) then
@@ -395,7 +395,7 @@ subroutine CompThermoData
 
     ! Store the standard molar Gibbs energies:
     do i = 1, nSpecies
-        dStdGibbsEnergy(i) = dChemicalPotential(i) * dSpeciesTotalAtoms(i) / DFLOAT(iParticlesPerMole(i))
+        dStdGibbsEnergy(i) = dChemicalPotential(i) * dSpeciesTotalAtoms(i) / iParticlesPerMole(i)
     end do
 
     ! Store an integer vector representing the component index when the phase is ionic.
