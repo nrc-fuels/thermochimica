@@ -65,7 +65,9 @@ subroutine CheckSysOnlyPureConPhases
     USE ModuleGEMSolver
     
     implicit none
-    
+
+    EXTERNAL dgesv
+
     integer                                 :: i, j, INFO
     integer, dimension(nElements)           :: IPIV
     real(8), dimension(nElements,nElements) :: A, AA

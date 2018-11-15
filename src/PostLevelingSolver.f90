@@ -59,7 +59,9 @@ subroutine PostLevelingSolver
     USE ModuleThermoIO, ONLY: INFOThermo
   
     implicit none
-       
+
+    EXTERNAL dgesv
+
     integer::                                 i, j, INFO,  iterpl
     integer,dimension(nElements)::            IPIV, iAssemblageOld
     real(8),dimension(0:nSolnPhasesSys)::     dTempVec

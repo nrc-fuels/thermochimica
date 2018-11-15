@@ -94,6 +94,8 @@ subroutine GEMNewton(INFO)
     USE ModuleGEMSolver
     
     implicit none
+
+    EXTERNAL dgesv
     
     integer                              :: i, j, k, l, m, INFO, nVar
     integer, dimension(:),   allocatable :: IPIV

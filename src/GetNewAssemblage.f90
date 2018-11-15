@@ -91,6 +91,8 @@ subroutine GetNewAssemblage(iter)
 
     implicit none
 
+    EXTERNAL dgesv
+
     integer                                :: i, j, k, INFO, iNewPhase, iter
     integer,dimension(nElements)           :: iAssemblageLast, IPIV
     real(8),dimension(nElements)           :: dTemp

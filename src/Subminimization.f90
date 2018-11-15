@@ -120,6 +120,8 @@ subroutine Subminimization(iSolnPhaseIndex,lPhasePass)
 
     implicit none
 
+    EXTERNAL dgesv
+
     integer :: iterSub,    iSolnPhaseIndex, iterSubMax
     logical :: lPhasePass, lDuplicate
 
